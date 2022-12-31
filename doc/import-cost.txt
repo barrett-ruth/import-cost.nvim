@@ -1,0 +1,49 @@
+*import-cost.nvim*
+
+Author: Barrett Ruth <https://barrett-ruth.github.io>
+Homepage: <https://github.com/barrett-ruth/import-cost.nvim>
+
+===============================================================================
+INTRODUCTION                                                 *import-cost.nvim*
+
+import-cost.nvim displays the costs of javascript imports inside neovim.
+It works with ES6 and CommonJS modules in any javascript, javascriptreact,
+typescript, or typescriptreact files.
+
+Author: Barrett Ruth <https://barrett-ruth.github.io>
+
+===============================================================================
+SETUP                                                     *import-cost.setup()*
+>lua
+    require('import-cost').setup(config)
+<
+Module setup.
+
+Parameters: ~
+
+    {config} `(table)`: Table containing configuration for import-cost.
+
+Usage: ~
+>lua
+    require('import-cost').setup({
+        -- Filetype to attach to
+        filetypes = {
+            'javascript',
+            'javascriptreact',
+            'typescript',
+            'typescriptreact',
+        },
+        format = {
+            -- Format string for bytes/kilobytes in virtual text
+            byte_format = '%.2f b',
+            kb_format = '%.2f kb',
+            -- Virtual text format (remove second "%s" to ignore gzipped size)
+            virtual_text = '%s (gzipped: %s)',
+        },
+        -- Highlight of virtual text —
+        -- a highlight group to link to or table as specified by nvim_set_hl()
+        highlight = 'Comment',
+    })
+<
+-------------------------------------------------------------------------------
+vim:tw=80:ts=8:ft=help:
