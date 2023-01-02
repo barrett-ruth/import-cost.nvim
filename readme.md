@@ -16,12 +16,10 @@ sh install.sh
 
 ## Configuration
 
+Configure via the setup function or use the defaults as shown below:
+
 ```lua
-require('import-cost').setup(opts)
+require('import-cost').setup(opts or {})
 ```
 
 See `:h import-cost` for more information
-
-## TODO
-
-- Automatic setup
