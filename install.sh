@@ -14,4 +14,4 @@ cd import-cost || exit
 eval "$installer install"
 cd ..
 
-cp src/index.js import-cost
+cp index.js import-cost
