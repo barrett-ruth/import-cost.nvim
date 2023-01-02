@@ -1,17 +1,29 @@
 # import-cost.nvim
 
 Display the costs of javascript imports inside neovim with the power of
-[import-cost](https://github.com/wix/import-cost)
+[import-cost](https://github.com/wix/import-cost/tree/master/packages/import-cost).
 
 ![preview](https://user-images.githubusercontent.com/62671086/210182400-defdb8d5-5d0a-42b6-a2b2-014272a7d7a7.png)
 
 ## Installation
 
-1. Install regularly with your package manager
-2. Run the install script inside the directory:
+1. Install regularly with your neovim package manager
+2. Run `install.sh` with your node.js package manager to setup import-cost:
 
 ```sh
-sh install.sh
+sh install.sh '<your-package-manager>'
+```
+
+For example, a config with [yarn](https://yarnpkg.com/) and [lazy.nvim](https://github.com/folke/lazy.nvim)
+may look like the following:
+
+```lua
+require('lazy').setup {
+    {
+        'barrett-ruth/import-cost.nvim',
+        build = 'sh install.sh yarn'
+    }
+}
 ```
 
 ## Configuration
@@ -23,3 +35,12 @@ require('import-cost').setup(opts)
 ```
 
 See `:h import-cost` for more information
+
+## Acknowledgements
+
+1. [wix/import-cost](https://github.com/wix/import-cost/): provides the node
+   backend that calculates the import costs
+2. [import-cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost):
+   the original VSCode plugin that started it all
+3. [vim-import-cost](https://github.com/yardnsm/vim-import-cOst): showed me it
+   was possible to do in neovim!
