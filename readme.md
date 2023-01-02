@@ -14,15 +14,6 @@ Display the costs of javascript imports inside neovim with the power of
 sh install.sh
 ```
 
-Example configuration with [packer.nvim](https://github.com/wbthomason/packer.nvim):
-
-```lua
-use {
-    'barrett-ruth/import-cost.nvim',
-    run = 'sh install.sh'
-}
-```
-
 ## Configuration
 
 ```lua
