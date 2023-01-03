@@ -8,4 +8,4 @@ cd import-cost || exit
 $1 install
 cd ..
 
-cp index.js import-cost
+cp index.js import-cost/index.js
