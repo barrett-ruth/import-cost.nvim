@@ -17,16 +17,15 @@ SETUP                                                     *import-cost.setup()*
 >lua
     require('import-cost').setup(config)
 <
-Module setup.
-
 Parameters: ~
 
-    {config} `(table)`: Table containing configuration for import-cost.
+    {config} `(table | nil)`: (Optional) table containing configuration for
+                            import-cost. Defaults shown below.
 
 Usage: ~
 >lua
     require('import-cost').setup({
-        -- Filetype to attach to
+        -- Filetypes to attach to
         filetypes = {
             'javascript',
             'javascriptreact',
@@ -35,8 +34,8 @@ Usage: ~
         },
         format = {
             -- Format string for bytes/kilobytes in virtual text
-            byte_format = '%.2f b',
-            kb_format = '%.2f kb',
+            byte_format = '%.1fb',
+            kb_format = '%.1fk',
             -- Virtual text format (remove second "%s" to ignore gzipped size)
             virtual_text = '%s (gzipped: %s)',
         },

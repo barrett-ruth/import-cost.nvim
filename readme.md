@@ -28,7 +28,7 @@ require('lazy').setup {
 
 ## Configuration
 
-Configure via the setup function (or just use the defaults):
+Configure via the setup function (or use the defaults with no arguments):
 
 ```lua
 require('import-cost').setup(opts)
@@ -37,6 +37,7 @@ require('import-cost').setup(opts)
 See `:h import-cost` for more information
 
 ## TODO
+
 1. CommonJS support
 
 ## Acknowledgements
@@ -45,5 +46,4 @@ See `:h import-cost` for more information
    backend that calculates the import costs
 2. [import-cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost):
    the original VSCode plugin that started it all
-3. [vim-import-cost](https://github.com/yardnsm/vim-import-cOst): showed me it
-   was possible to do in neovim!
+3. [vim-import-cost](https://github.com/yardnsm/vim-import-cOst): inspired me to do it in neovim!
