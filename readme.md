@@ -36,6 +36,9 @@ require('import-cost').setup(opts)
 
 See `:h import-cost` for more information
 
+## TODO
+1. CommonJS support
+
 ## Acknowledgements
 
 1. [wix/import-cost](https://github.com/wix/import-cost/): provides the node
