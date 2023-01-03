@@ -10,7 +10,7 @@ local function au(events, cb)
     vim.api.nvim_create_autocmd(events, {
         callback = function(opts)
             if is_ic_buf(opts.buf) then
-                cb(opts)
+                cb(opts.buf)
             end
         end,
         group = M.aug_id,
@@ -25,8 +25,8 @@ M.config = {
         'typescriptreact',
     },
     format = {
-        byte_format = '%.2f b',
-        kb_format = '%.2f kb',
+        byte_format = '%.1fb',
+        kb_format = '%.1fk',
         virtual_text = '%s (gzipped: %s)',
     },
     highlight = 'Comment',
@@ -52,12 +52,21 @@ M.setup = function(user_config)
 
     local extmark = require 'import-cost.extmark'
 
-    au({ 'BufEnter', 'BufWritePost' }, function(opts)
-        extmark.set_missing_extmarks(opts.buf)
+    au('BufEnter', function(bufnr)
+        extmark.set_extmarks(bufnr)
     end)
 
-    au('TextChanged', function(opts)
-        extmark.update_extmarks(opts.buf)
+    au('InsertEnter', function(bufnr)
+        extmark.delete_extmarks(bufnr)
+    end)
+
+    au('InsertLeave', function(bufnr)
+        extmark.set_extmarks(bufnr)
+    end)
+
+    au('TextChanged', function(bufnr)
+        extmark.delete_extmarks(bufnr)
+        extmark.set_extmarks(bufnr)
     end)
 end
 

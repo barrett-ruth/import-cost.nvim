@@ -32,8 +32,4 @@ function M.parse_data(chunk)
     return json.data
 end
 
-function M.is_ok(data)
-    return data and data.size
-end
-
 return M

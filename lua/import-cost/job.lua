@@ -13,7 +13,7 @@ local format_bytes = function(bytes)
     return string.format(format.kb_format, 0.0009765625 * bytes)
 end
 
-function M.set_extmark(bufnr, data, extmark_id)
+function M.render_extmark(bufnr, data, extmark_id)
     local line, size, gzip =
         data.line - 1, format_bytes(data.size), format_bytes(data.gzip)
 
