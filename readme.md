@@ -3,7 +3,7 @@
 Display the costs of javascript imports inside neovim with the power of
 [import-cost](https://github.com/wix/import-cost/tree/master/packages/import-cost).
 
-![preview](https://user-images.githubusercontent.com/62671086/210182400-defdb8d5-5d0a-42b6-a2b2-014272a7d7a7.png)
+![preview](https://user-images.githubusercontent.com/62671086/210295248-916a8d81-22c9-432a-87fd-cf539879bf0c.png)
 
 ## Installation
 
