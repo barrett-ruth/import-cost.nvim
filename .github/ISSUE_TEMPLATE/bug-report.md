@@ -1,15 +1,15 @@
 ---
 name: Bug Report
 about: File a bug with import-cost.nvim
-title: ''
+title: 'Bug Report'
 labels: ''
 assignees: ''
 
 ---
 
 <!-- Be sure you can affirm the following: -->
-<!-- import-cost.nvim is up to date -->
-<!-- I have searched the issue tracker and not found a similar issue -->
+<!-- 1. import-cost.nvim is up to date -->
+<!-- 2. I have searched the issue tracker and not found a similar issue -->
 
 ### Info
 
@@ -33,8 +33,10 @@ require('import-cost').setup {
 
 ```lua
 require('nvim-package-manager').setup {
-    -- ...
-    'barrett-ruth/import-cost.nvim',
+    -- Any special plugin config
+    {
+        'barrett-ruth/import-cost.nvim',
+    }
 }
 ```
 
