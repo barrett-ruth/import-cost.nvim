@@ -73,9 +73,9 @@ function M.delete_extmarks(bufnr)
             == util.normalize_string(
                 vim.api.nvim_buf_get_text(
                     bufnr,
-                    data.line,
+                    data.line - 1,
                     0,
-                    data.line,
+                    data.line - 1,
                     -1,
                     {}
                 )[1]
