@@ -1,4 +1,4 @@
-*import-cost.nvim*
+*import-cost* *import-cost.txt*
 
 Author: Barrett Ruth <https://barrett-ruth.github.io>
 Homepage: <https://github.com/barrett-ruth/import-cost.nvim>
