@@ -70,7 +70,16 @@ function M.delete_extmarks(bufnr)
     for string, data in pairs(cache[bufnr]) do
         if
             string
-            == util.normalize_string(vim.fn.getbufoneline(bufnr, data.line))
+            == util.normalize_string(
+                vim.api.nvim_buf_get_text(
+                    bufnr,
+                    data.line,
+                    0,
+                    data.line,
+                    -1,
+                    {}
+                )[1]
+            )
         then
             goto continue
         else
