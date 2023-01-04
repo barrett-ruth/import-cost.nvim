@@ -14,7 +14,6 @@ assignees: ''
 ### Info
 
 - Operating System:
-- Terminal:
 - `nvim --version`:
 - Node package manager:
 - `<node-package-manager> --version`:
