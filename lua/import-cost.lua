@@ -33,12 +33,23 @@ M.config = {
 }
 
 M.setup = function(user_config)
+    M.script_path = vim.fn.fnamemodify(debug.getinfo(1).source:sub(2), ':h:h')
+        .. '/import-cost/index.js'
+
+    if not vim.loop.fs_stat(M.script_path) then
+        vim.notify_once(
+            string.format(
+                'import-cost.nvim: Failed to load script at %s. Ensure the plugin is properly installed.',
+                M.script_path
+            ),
+            vim.log.levels.ERROR
+        )
+        return
+    end
+
     M.config = vim.tbl_deep_extend('force', M.config, user_config or {})
 
     M.ns_id = vim.api.nvim_create_namespace 'ImportCost'
-
-    M.script_path = vim.fn.fnamemodify(debug.getinfo(1).source:sub(2), ':h:h')
-        .. '/import-cost/index.js'
 
     vim.api.nvim_set_hl(
         0,
