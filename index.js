@@ -16,10 +16,7 @@ const give = (data) =>
 
 const init = async () => {
   const [path, filetype] = process.argv.slice(2);
-  const lang =
-    filetype.substring(0, "typescript".length) === "typescript"
-      ? Lang.TYPESCRIPT
-      : Lang.JAVASCRIPT;
+  const lang = filetype[0] === "t" ? Lang.TYPESCRIPT : Lang.JAVASCRIPT;
   const contents = await receive();
 
   const emitter = importCost(path, contents, lang);
