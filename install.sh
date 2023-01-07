@@ -5,7 +5,7 @@ if [ ! "$1" ]; then
     exit
 fi
 
-git clone 'git@github.com:wix/import-cost.git' || (echo 'Failed to clone wix/import-cost' && exit)
+git clone 'https://github.com/wix/import-cost.git' || (echo 'Failed to clone wix/import-cost' && exit)
 
 cd import-cost || exit
 $1 install
