@@ -36,9 +36,13 @@ require('import-cost').setup(opts)
 
 See `:h import-cost` for more information
 
-## TODO
+## Known Issues
 
-1. CommonJS support
+1. CommonJS support is particularly flaky - some packages work, some dont (this
+   is by virtue of the [npm module](https://github.com/wix/import-cost/), and,
+   thus, unavoidable)
+2. Long wait times - once again, the npm module may take quite a while before
+   fully parsing packages
 
 ## Acknowledgements
 
