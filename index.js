@@ -16,7 +16,12 @@ const give = (data) =>
 
 const init = async () => {
   const [path, filetype] = process.argv.slice(2);
-  const lang = filetype[0] === "t" ? Lang.TYPESCRIPT : Lang.JAVASCRIPT;
+  const lang = (() => {
+    if (filetype === "svelte") return Lang.SVELTE;
+    if (filetype === "vue") return Lang.VUE;
+    if (filetype[0] === "t") return Lang.TYPESCRIPT;
+    return Lang.JAVASCRIPT;
+  })();
   const contents = await receive();
 
   const emitter = importCost(path, contents, lang);
