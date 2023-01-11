@@ -21,7 +21,8 @@ may look like the following:
 require('lazy').setup {
     {
         'barrett-ruth/import-cost.nvim',
-        build = 'sh install.sh yarn'
+        build = 'sh install.sh yarn',
+        config = true
     }
 }
 ```
