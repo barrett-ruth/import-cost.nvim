@@ -14,9 +14,16 @@ const receive = async () => {
 const give = (data) =>
   process.nextTick(() => process.stdout.write(`${JSON.stringify(data)}|`));
 
+const filetypes = new Map([
+  ["j", Lang.JAVASCRIPT],
+  ["s", Lang.SVELTE],
+  ["t", Lang.TYPESCRIPT],
+  ["v", Lang.VUE],
+]);
+
 const init = async () => {
   const [path, filetype] = process.argv.slice(2);
-  const lang = filetype[0] === "t" ? Lang.TYPESCRIPT : Lang.JAVASCRIPT;
+  const lang = filetypes.get(filetype[0]);
   const contents = await receive();
 
   const emitter = importCost(path, contents, lang);
