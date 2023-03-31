@@ -27,6 +27,7 @@ function M.render_extmark(bufnr, data, extmark_id)
                 'ImportCostVirtualText',
             },
         },
+        hl_mode = 'combine',
     })
 end
 
