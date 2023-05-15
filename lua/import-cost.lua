@@ -1,7 +1,11 @@
 local M = {}
 
 local function is_ic_buf(bufnr)
-    local filetype = vim.api.nvim_buf_get_option(bufnr, 'filetype')
+    local ok, filetype = pcall(vim.api.nvim_buf_get_option, bufnr, 'filetype')
+
+    if not ok then
+        return false
+    end
 
     return vim.tbl_contains(M.config.filetypes, filetype)
 end
