@@ -27,6 +27,7 @@ M.config = {
         'javascriptreact',
         'typescript',
         'typescriptreact',
+        'svelte'
     },
     format = {
         byte_format = '%.1fb',
