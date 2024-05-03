@@ -8,7 +8,8 @@ Display the costs of javascript imports inside neovim with the power of
 ## Installation
 
 1. Install regularly with your neovim package manager
-2. Run `install.sh` with your node.js package manager to setup import-cost:
+    - *NOTE*: pnpm is not supported because [import-cost](https://github.com/wix/import-cost) does not.
+3. Run `install.sh` with your node.js package manager to setup import-cost:
 
 ```sh
 sh install.sh '<your-package-manager>'
